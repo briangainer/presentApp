@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @deck.title %>
+</p>
+
+
+
+<% for s in @sections %>
+	<p class='highlight'><%= s.title %></p>
+<% end %>
+
+<script>
+var splittedText = document.getElementsByClassName('highlight');
+
+// var splittedText = ["Hello", "World", "How", "Are", "You", "Today"];
+
+function loopThroughSplittedText(splittedText) {
+    for (var i = 0; i < splittedText.length; i++) {
+        // for each iteration console.log a word
+        // and make a pause after it
+        (function (i) {
+            setTimeout(function () {
+
+                splittedText[i].style.backgroundColor = "grey"
+                console.log(splittedText[i]);
+                if (i-1 >= 0) {
+            		splittedText[i-1].style.backgroundColor = "white"
+            	}
+            }, 2000 * i);
+        })(i);
+    };
+}
+loopThroughSplittedText(splittedText);
+
+</script>
+
+<%= link_to 'Edit', edit_deck_path(@deck) %> |
+<%= link_to 'Back', decks_path %>
