@@ -12,9 +12,19 @@
   <% end %>
 
   <div class="field">
-    <% #form.label :title %>
+    <%= form.label :title %>
     <%= form.text_field :title, id: :deck_title %>
   </div>
+
+  <%= form.fields_for :sections do |f| %>
+    <fieldset>
+      <%= f.label :title, "Section" %>
+      <%= f.text_area :title %>
+      <%= f.hidden_field :_destroy %>
+      <%= link_to 'remove', '#', class: 'remove_sections' %>
+    </fieldset>
+  <% end %>
+  <%= link_to 'Add Answer', '#', class: 'add_sections' %>
 
   <div class="actions">
     <%= form.submit %>
