@@ -19,12 +19,14 @@
   <%= form.fields_for :sections do |f| %>
     <fieldset>
       <%= f.label :title, "Section" %>
-      <%= f.text_area :title %>
+      <%= f.text_area :title %> <br>
+      Time (seconds) <br>
+      <%= f.number_field :time %>
       <%= f.hidden_field :_destroy %>
       <%= link_to 'remove', '#', class: 'remove_sections' %>
     </fieldset>
   <% end %>
-  <%= link_to 'Add Answer', '#', class: 'add_sections' %>
+  <%= link_to 'Add Section', '#', class: 'add_sections' %>
 
   <div class="actions">
     <%= form.submit %>

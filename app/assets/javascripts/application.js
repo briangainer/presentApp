@@ -30,8 +30,8 @@ $(document).on('click', '.add_sections', function () {
     //get number of milliseconds since midnight Jan 1, 1970  
     //and use it for address key 
     var mSec = date.getTime();
-    var str = '<fieldset><textarea name="deck[sections_attributes][66][title]" id="deck_sections_attributes_66_title"></textarea><input type="hidden" value="false" name="deck[sections_attributes][66][_destroy]" id="deck_sections_attributes_66__destroy" /><a class="remove_sections" href="#">remove</a></fieldset>'
-    var hey = str.replace("66", mSec);
-    $(this).parent().append(hey)
+    var str = '<fieldset><label for="deck_sections_attributes_999999_title">Section</label><textarea name="deck[sections_attributes][999999][title]" id="deck_sections_attributes_999999_title"></textarea> <br>Time (seconds) <br><input type="number" name="deck[sections_attributes][999999][time]" id="deck_sections_attributes_999999_time" /><input type="hidden" value="false" name="deck[sections_attributes][999999][_destroy]" id="deck_sections_attributes_999999__destroy" /><a class="remove_sections" href="#">remove</a></fieldset>'
+    var hey = str.replace("999999", mSec);
+    $(this).before(hey)
 	event.preventDefault()
 });
